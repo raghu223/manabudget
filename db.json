@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": "22ce",
+      "name": "Test",
+      "email": "test@abc.com",
+      "password": "test123"
+    }
+  ],
+  "investments": [
+    {
+      "id": "5631",
+      "userId": "22ce",
+      "name": "Initial Investment",
+      "principal": 30000,
+      "rate": 18,
+      "startDate": "2025-06-22T18:30:00.000Z",
+      "interest": 30.00749999999607
+    }
+  ],
+  "budgets": [
+    {
+      "id": "f5c7",
+      "userId": "22ce",
+      "text": "",
+      "amount": 0
+    },
+    {
+      "id": "52a7",
+      "userId": "22ce",
+      "text": "",
+      "amount": 0
+    }
+  ]
+}

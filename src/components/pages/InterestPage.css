@@ -1,0 +1,13 @@
+.interest-page-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.interest-calculator-section {
+  width: 45%;
+}
+
+.investment-section {
+  width: 45%;
+}
