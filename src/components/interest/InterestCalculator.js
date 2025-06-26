@@ -31,8 +31,8 @@ const InterestCalculator = () => {
   return (
     <div className="interest-calculator">
       <h3>Interest Calculator</h3>
-      <form onSubmit={calculateInterest}>
-        <div>
+      <form className="calculator-form" onSubmit={calculateInterest}>
+        <div className="form-group">
           <label>Principal Amount ($):</label>
           <input
             type="number"
@@ -41,7 +41,7 @@ const InterestCalculator = () => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Annual Interest Rate (%):</label>
           <input
             type="number"
@@ -50,7 +50,7 @@ const InterestCalculator = () => {
             required
           />
         </div>
-        <div>
+        <div className="form-group">
           <label>Time Period (Years):</label>
           <input
             type="number"
@@ -59,7 +59,9 @@ const InterestCalculator = () => {
             required
           />
         </div>
-        <button type="submit">Calculate</button>
+        <div className="form-group" style={{ alignSelf: 'end' }}>
+          <button type="submit">Calculate</button>
+        </div>
       </form>
 
       {results && (

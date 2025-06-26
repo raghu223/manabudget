@@ -12,11 +12,19 @@ const Header = () => {
     dispatch(logout());
   };
 
+  const toCamelCase = (str) => {
+    if (!str) return '';
+    return str
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+  };
+
   return (
     <nav>
       <ul className="nav-links">
         <li>
-          <NavLink to="/" exact activeClassName="active">Dashboard</NavLink>
+          <NavLink to="/dashboard" exact activeClassName="active">Dashboard</NavLink>
         </li>
         {isAuthenticated && (
           <>
@@ -24,7 +32,7 @@ const Header = () => {
               <NavLink to="/budget" activeClassName="active">Budget</NavLink>
             </li>
             <li>
-              <NavLink to="/interest" activeClassName="active">Interest</NavLink>
+              <NavLink to="/investments" activeClassName="active">Investments</NavLink>
             </li>
             <li>
               <NavLink to="/profile" activeClassName="active">Profile</NavLink>
@@ -35,7 +43,7 @@ const Header = () => {
       <div className="user-actions">
         {isAuthenticated ? (
           <>
-            <span>Welcome, {user.name}</span>
+            <span style={{ fontWeight: 700, fontSize: '1.08rem' }}>Welcome, {toCamelCase(user.name)}</span>
             <button onClick={handleLogout}>Logout</button>
           </>
         ) : (

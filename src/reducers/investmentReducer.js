@@ -17,13 +17,69 @@ const calculateAllInterests = (investments) => {
       return { ...investment, interest: 0 };
     }
 
+    const annualRate = investment.rate / 100;
     const timeDiff = now.getTime() - startDate.getTime();
     const daysDiff = Math.max(0, Math.floor(timeDiff / (1000 * 3600 * 24)));
+    
+    let interest = 0;
 
-    // Changed to Simple Interest using a 360-day year as requested.
-    const annualRate = investment.rate / 100;
-    const dailyRate = annualRate / 360;
-    const interest = investment.principal * dailyRate * daysDiff;
+    if (investment.category === 'Gold Loan') {
+      const oneYearInDays = 365;
+
+      if (daysDiff <= oneYearInDays) {
+        // Simple interest for the first year (or less)
+        const dailyRate = annualRate / 360;
+        interest = investment.principal * dailyRate * daysDiff;
+      } else {
+        // Overdue: monthly compounding on total outstanding after 1 year with penal interest
+        const principal = investment.principal;
+        
+        // 1. Simple interest for the first year (using original rate)
+        const interestFirstYear = principal * annualRate;
+
+        // 2. Principal for compounding period starts after one year
+        const compoundingPrincipal = principal + interestFirstYear;
+
+        // Penal rate for overdue period
+        const penalAnnualRate = (investment.rate + 2) / 100;
+
+        // 3. Calculate the number of full months passed since the one-year mark
+        const oneYearMark = new Date(startDate);
+        oneYearMark.setFullYear(oneYearMark.getFullYear() + 1);
+
+        let compoundingMonths = 0;
+        if (now > oneYearMark) {
+          compoundingMonths = (now.getFullYear() - oneYearMark.getFullYear()) * 12 + (now.getMonth() - oneYearMark.getMonth());
+          if (now.getDate() < oneYearMark.getDate()) {
+              compoundingMonths--;
+          }
+          compoundingMonths = Math.max(0, compoundingMonths);
+        }
+
+        // 4. Apply monthly compounding for each full month using penal rate
+        const monthlyPenalRate = penalAnnualRate / 12;
+        const compoundedAmount = compoundingPrincipal * Math.pow(1 + monthlyPenalRate, compoundingMonths);
+        
+        // 5. Calculate simple interest for the remaining days in the current partial month using penal rate
+        const lastCompoundingDate = new Date(oneYearMark);
+        if (compoundingMonths > 0) {
+            lastCompoundingDate.setMonth(lastCompoundingDate.getMonth() + compoundingMonths);
+        }
+        
+        const remainingTimeDiff = now.getTime() - lastCompoundingDate.getTime();
+        const remainingDays = Math.max(0, Math.floor(remainingTimeDiff / (1000 * 3600 * 24)));
+        const dailyPenalRate = penalAnnualRate / 360;
+        const interestForRemainingDays = compoundedAmount * dailyPenalRate * remainingDays;
+
+        // 6. Total interest is the sum of first year's interest, compounded interest, and remaining days' interest
+        const totalCompoundedInterest = (compoundedAmount - compoundingPrincipal) + interestForRemainingDays;
+        interest = interestFirstYear + totalCompoundedInterest;
+      }
+    } else {
+      // Existing logic for "General" and "Bond"
+      const dailyRate = annualRate / 360;
+      interest = investment.principal * dailyRate * daysDiff;
+    }
 
     return {
       ...investment,

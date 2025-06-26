@@ -11,6 +11,7 @@ import { fetchData } from './dataActions';
 // Action types
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGOUT = 'LOGOUT';
+export const AUTH_STATE_CHANGED = 'AUTH_STATE_CHANGED';
 
 // Action creators
 export const loginSuccess = (user) => ({
@@ -98,4 +99,23 @@ export const logout = () => async (dispatch) => {
     dispatch({
         type: LOGOUT,
     });
+};
+
+export const listenToAuthChanges = () => (dispatch) => {
+  auth.onAuthStateChanged(async (user) => {
+    if (user) {
+      const userDocRef = doc(db, "users", user.uid);
+      const userDoc = await getDoc(userDocRef);
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        dispatch(loginSuccess({ id: user.uid, ...userData }));
+        dispatch(fetchData(user.uid));
+      } else {
+        // Handle case where user exists in auth but not in firestore
+        dispatch(logout());
+      }
+    } else {
+      dispatch({ type: LOGOUT });
+    }
+  });
 };

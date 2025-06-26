@@ -1,0 +1,95 @@
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(240,242,245,0.95);
+  background-blend-mode: lighten;
+}
+
+.landing-content {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  padding: 40px 32px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.landing-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: #28a745;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.video-demo {
+  margin-bottom: 24px;
+}
+
+.features-list {
+  text-align: left;
+  margin: 0 auto 24px auto;
+  padding: 0 0 0 20px;
+  color: #444;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn.primary {
+  background: #28a745;
+  color: #fff;
+}
+.btn.primary:hover {
+  background: #218838;
+}
+.btn.secondary {
+  background: #fff;
+  color: #28a745;
+  border: 2px solid #28a745;
+}
+.btn.secondary:hover {
+  background: #eafbe7;
+}
+.btn.google {
+  background: #fff;
+  color: #db4437;
+  border: 1px solid #db4437;
+  margin-right: 8px;
+}
+.btn.facebook {
+  background: #1877f3;
+  color: #fff;
+  border: none;
+}
+.social-login {
+  margin-top: 8px;
+}
+@media (max-width: 600px) {
+  .landing-content {
+    padding: 20px 8px;
+  }
+  .video-demo iframe {
+    width: 100% !important;
+    height: 180px !important;
+  }
+}

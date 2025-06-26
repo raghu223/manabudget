@@ -12,22 +12,32 @@
   margin-bottom: 20px;
 }
 
-.interest-calculator form div {
-  margin-bottom: 15px;
+.interest-calculator form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.interest-calculator label {
+.interest-calculator .form-group {
+  margin-bottom: 0;
+}
+
+.interest-calculator .form-group label {
   display: block;
   margin-bottom: 5px;
   font-weight: 600;
 }
 
-.interest-calculator input,
-.interest-calculator select {
+.interest-calculator .form-group input,
+.interest-calculator .form-group select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.interest-calculator .form-group:last-child {
+  grid-column: 1 / -1;
 }
 
 .interest-calculator button {
