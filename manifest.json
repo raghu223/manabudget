@@ -20,6 +20,9 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#28a745",
+  "background_color": "#f0f2f5",
+  "orientation": "portrait",
+  "description": "ManaBudget - Smart personal finance and investment dashboard.",
+  "scope": "./"
 }
