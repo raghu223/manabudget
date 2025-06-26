@@ -23,7 +23,7 @@ const LoginPage = () => {
     e.preventDefault();
     const result = await dispatch(login(email, password));
     if (result.success) {
-      navigate('/');
+      navigate('/dashboard');
     } else {
       setError(result.error);
     }
@@ -48,7 +48,7 @@ const LoginPage = () => {
       }
       dispatch({ type: 'LOGIN_SUCCESS', payload: { id: user.uid, ...userData } });
       dispatch({ type: 'FETCH_DATA', payload: user.uid }); // Optionally trigger data fetch
-      navigate('/');
+      navigate('/dashboard');
     } catch (err) {
       setError('Google login failed.');
     }
