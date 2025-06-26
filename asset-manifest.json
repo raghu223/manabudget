@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/manabudget/static/css/main.c854afbe.css",
-    "main.js": "/manabudget/static/js/main.a7ea9e50.js",
+    "main.js": "/manabudget/static/js/main.989537e9.js",
     "static/js/453.2bc29028.chunk.js": "/manabudget/static/js/453.2bc29028.chunk.js",
     "index.html": "/manabudget/index.html",
     "main.c854afbe.css.map": "/manabudget/static/css/main.c854afbe.css.map",
-    "main.a7ea9e50.js.map": "/manabudget/static/js/main.a7ea9e50.js.map",
+    "main.989537e9.js.map": "/manabudget/static/js/main.989537e9.js.map",
     "453.2bc29028.chunk.js.map": "/manabudget/static/js/453.2bc29028.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c854afbe.css",
-    "static/js/main.a7ea9e50.js"
+    "static/js/main.989537e9.js"
   ]
 }
