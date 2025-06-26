@@ -81,8 +81,21 @@ const InvestmentList = ({ investments: propInvestments }) => {
         <h3>{isSample ? 'Sample Investments' : 'Scheduled Investments'}</h3>
         {!isSample && investments.length > 0 && (
           <div style={{ display: 'flex', gap: '8px' }}>
-            <button className="btn export-btn" onClick={handleExport}>Export to Excel</button>
-            <button className="btn export-btn" onClick={handleExportPDF}>Export to PDF</button>
+            <button className="btn export-btn" onClick={handleExport} aria-label="Export to Excel" title="Export to Excel">
+              {/* Excel Icon */}
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" rx="4" fill="#217346"/>
+                <path d="M7.5 8.5L10 12L7.5 15.5M16.5 8.5L14 12L16.5 15.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button className="btn export-btn" onClick={handleExportPDF} aria-label="Export to PDF" title="Export to PDF">
+              {/* PDF Icon */}
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="24" height="24" rx="4" fill="#D32F2F"/>
+                <path d="M8 8H16V16H8V8Z" stroke="#fff" strokeWidth="1.5"/>
+                <text x="12" y="16" textAnchor="middle" fill="#fff" fontSize="7" fontFamily="Arial" dy=".3em">PDF</text>
+              </svg>
+            </button>
           </div>
         )}
       </div>

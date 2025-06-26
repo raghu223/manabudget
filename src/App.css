@@ -49,6 +49,34 @@
   margin: 30px auto;
 }
 
+@media (max-width: 900px) {
+  .App {
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 2px;
+  }
+  .container {
+    padding: 0 2px;
+  }
+  .btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
 main {
   padding: 20px 0;
 }
