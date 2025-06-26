@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/manabudget/static/css/main.c854afbe.css",
-    "main.js": "/manabudget/static/js/main.989537e9.js",
-    "static/js/453.2bc29028.chunk.js": "/manabudget/static/js/453.2bc29028.chunk.js",
+    "main.css": "/manabudget/static/css/main.0be08b6f.css",
+    "main.js": "/manabudget/static/js/main.6590103d.js",
+    "static/js/239.33ce6cda.chunk.js": "/manabudget/static/js/239.33ce6cda.chunk.js",
+    "static/js/977.ab9bfda0.chunk.js": "/manabudget/static/js/977.ab9bfda0.chunk.js",
+    "static/js/455.31dcfe32.chunk.js": "/manabudget/static/js/455.31dcfe32.chunk.js",
+    "static/js/453.d8091834.chunk.js": "/manabudget/static/js/453.d8091834.chunk.js",
     "index.html": "/manabudget/index.html",
-    "main.c854afbe.css.map": "/manabudget/static/css/main.c854afbe.css.map",
-    "main.989537e9.js.map": "/manabudget/static/js/main.989537e9.js.map",
-    "453.2bc29028.chunk.js.map": "/manabudget/static/js/453.2bc29028.chunk.js.map"
+    "main.0be08b6f.css.map": "/manabudget/static/css/main.0be08b6f.css.map",
+    "main.6590103d.js.map": "/manabudget/static/js/main.6590103d.js.map",
+    "239.33ce6cda.chunk.js.map": "/manabudget/static/js/239.33ce6cda.chunk.js.map",
+    "977.ab9bfda0.chunk.js.map": "/manabudget/static/js/977.ab9bfda0.chunk.js.map",
+    "455.31dcfe32.chunk.js.map": "/manabudget/static/js/455.31dcfe32.chunk.js.map",
+    "453.d8091834.chunk.js.map": "/manabudget/static/js/453.d8091834.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c854afbe.css",
-    "static/js/main.989537e9.js"
+    "static/css/main.0be08b6f.css",
+    "static/js/main.6590103d.js"
   ]
 }
