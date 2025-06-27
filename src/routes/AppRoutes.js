@@ -9,6 +9,8 @@ import SignupPage from '../components/pages/SignupPage';
 import ForgotPasswordPage from '../components/pages/ForgotPasswordPage';
 import PrivateRoute from './PrivateRoute';
 import LandingPage from '../components/pages/LandingPage';
+import PrivacyPolicy from '../components/pages/PrivacyPolicy';
+import TermsOfService from '../components/pages/TermsOfService';
 
 const AppRoutes = () => {
   return (
@@ -17,6 +19,8 @@ const AppRoutes = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
       <Route element={<PrivateRoute />}>
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/budget" element={<BudgetPage />} />

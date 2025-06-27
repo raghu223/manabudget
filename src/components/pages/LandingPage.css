@@ -1,3 +1,7 @@
+/* Revert global html/body changes */
+/* Fix vertical scrollbar: use box-sizing and dynamic viewport height */
+/* Improved: Only min-height, allow scroll if needed, no forced overflow */
+/* Centered content, allow scroll if needed */
 .landing-page {
   min-height: 100vh;
   display: flex;
@@ -5,8 +9,11 @@
   justify-content: center;
   background: rgba(240,242,245,0.95);
   background-blend-mode: lighten;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
+/* Ensure padding doesn't cause overflow */
 .landing-content {
   background: #fff;
   border-radius: 16px;
@@ -15,6 +22,7 @@
   max-width: 480px;
   width: 100%;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .landing-content h1 {

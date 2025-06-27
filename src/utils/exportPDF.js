@@ -1,5 +1,6 @@
+
 import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+import autoTable from 'jspdf-autotable';
 
 export function exportInvestmentsToPDF(investments) {
   const doc = new jsPDF();
@@ -21,6 +22,6 @@ export function exportInvestmentsToPDF(investments) {
     inv.interest,
     inv.principal + inv.interest,
   ]);
-  doc.autoTable({ head: [tableColumn], body: tableRows });
+  autoTable(doc, { head: [tableColumn], body: tableRows });
   doc.save('investments.pdf');
 }

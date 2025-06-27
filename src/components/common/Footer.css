@@ -1,0 +1,133 @@
+/* Footer always at bottom, even on short pages */
+.footer {
+  background: #f8f9fa;
+  padding: 18px 0 8px 0;
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 10;
+}
+/* Contact modal overlay and form styling */
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.contact-modal {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 32px 24px 20px 24px;
+  max-width: 360px;
+  width: 100%;
+  text-align: left;
+  position: relative;
+}
+.contact-modal h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #28a745;
+  font-size: 1.3rem;
+}
+.contact-modal label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: block;
+  color: #333;
+}
+.contact-modal input,
+.contact-modal textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contact-modal textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.contact-modal .btn.primary {
+  background: #28a745;
+  color: #fff;
+  border: none;
+}
+.contact-modal .btn.secondary {
+  background: #f8f9fa;
+  color: #28a745;
+  border: 1px solid #28a745;
+}
+.contact-modal .btn.primary:hover {
+  background: #218838;
+}
+.contact-modal .btn.secondary:hover {
+  background: #eafbe7;
+}
+.contact-modal [type="button"] {
+  margin-right: 8px;
+}
+.contact-modal form {
+  margin-bottom: 0;
+}
+.contact-modal div[style*="color: #28a745"] {
+  margin-top: 10px;
+  font-weight: 500;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+  min-height: 32px;
+}
+.footer-links a, .footer-contact {
+  color: #28a745;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0 4px;
+  outline: none;
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+.footer-links a:hover, .footer-contact:hover {
+  text-decoration: underline;
+  background: #eafbe7;
+}
+.footer-copy {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 0.95rem;
+    padding: 12px 0 6px 0;
+  }
+  .footer-links {
+    gap: 8px;
+    min-height: 28px;
+  }
+}

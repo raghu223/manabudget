@@ -8,7 +8,11 @@ import { listenToAuthChanges } from './actions/authActions';
 import { useLocation } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
-import './components/common/Spinner.css';
+
+
+import Footer from './components/common/Footer';
+import emailjs from 'emailjs-com';
+
 
 
 
@@ -19,6 +23,37 @@ function App() {
   const dispatch = useDispatch();
   const { loading, isAuthenticated } = useSelector((state) => state.auth);
   const location = useLocation();
+
+  // Contact modal state and handler
+  const [showContact, setShowContact] = useState(false);
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactMessage, setContactMessage] = useState('');
+  const [contactSent, setContactSent] = useState(false);
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    // EmailJS integration
+    try {
+      await emailjs.send(
+        'service_b27efxz', // replace with your EmailJS service ID
+        'template_9jvpx3r', // replace with your EmailJS template ID
+        {
+          from_email: contactEmail,
+          message: contactMessage,
+        },
+        '5rf3vBM2WsmQhgS4G' // replace with your EmailJS public key
+      );
+      setContactSent(true);
+      setTimeout(() => {
+        setShowContact(false);
+        setContactSent(false);
+        setContactEmail('');
+        setContactMessage('');
+      }, 2000);
+    } catch (err) {
+      alert('Failed to send message. Please try again later.');
+    }
+  };
 
   useEffect(() => {
     dispatch(listenToAuthChanges());
@@ -63,7 +98,32 @@ function App() {
       <div className="container">
         <AppRoutes />
       </div>
+      {/* Only show footer if not on landing page */}
+      {location.pathname !== '/' && <Footer onContactClick={() => setShowContact(true)} />}
+      {showContact && (
+        <div className="contact-modal-overlay" onClick={() => setShowContact(false)}>
+          <div className="contact-modal" onClick={e => e.stopPropagation()}>
+            <h3>Contact Support</h3>
+            <p style={{ marginBottom: 12 }}>
+              For support, email us at <a href="mailto:manabudget25@gmail.com" style={{ color: '#28a745', textDecoration: 'underline' }}>manabudget25@gmail.com</a>
+              <br />or use the form below:
+            </p>
+            <form onSubmit={handleContactSubmit}>
+              <label htmlFor="contact-email">Your Email</label>
+              <input id="contact-email" type="email" value={contactEmail} onChange={e => setContactEmail(e.target.value)} required style={{ width: '100%', marginBottom: 8 }} />
+              <label htmlFor="contact-message">Message</label>
+              <textarea id="contact-message" value={contactMessage} onChange={e => setContactMessage(e.target.value)} required rows={4} style={{ width: '100%', marginBottom: 8 }} />
+              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 8 }}>
+                <button type="button" className="btn secondary" onClick={() => setShowContact(false)}>Cancel</button>
+                <button type="submit" className="btn primary">Send</button>
+              </div>
+            </form>
+            {contactSent && <div style={{ color: '#28a745', marginTop: 8 }}>Thank you! Your message has been sent.</div>}
+          </div>
+        </div>
+      )}
     </>
+
   );
 }
 
