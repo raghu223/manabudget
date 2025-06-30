@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/manabudget/static/css/main.29e1cca0.css",
+    "main.css": "/manabudget/static/css/main.965e07b2.css",
     "main.js": "/manabudget/static/js/main.dceef9c2.js",
     "static/js/239.33ce6cda.chunk.js": "/manabudget/static/js/239.33ce6cda.chunk.js",
     "static/js/977.ab9bfda0.chunk.js": "/manabudget/static/js/977.ab9bfda0.chunk.js",
     "static/js/455.31dcfe32.chunk.js": "/manabudget/static/js/455.31dcfe32.chunk.js",
     "static/js/453.d8091834.chunk.js": "/manabudget/static/js/453.d8091834.chunk.js",
     "index.html": "/manabudget/index.html",
-    "main.29e1cca0.css.map": "/manabudget/static/css/main.29e1cca0.css.map",
+    "main.965e07b2.css.map": "/manabudget/static/css/main.965e07b2.css.map",
     "main.dceef9c2.js.map": "/manabudget/static/js/main.dceef9c2.js.map",
     "239.33ce6cda.chunk.js.map": "/manabudget/static/js/239.33ce6cda.chunk.js.map",
     "977.ab9bfda0.chunk.js.map": "/manabudget/static/js/977.ab9bfda0.chunk.js.map",
@@ -15,7 +15,7 @@
     "453.d8091834.chunk.js.map": "/manabudget/static/js/453.d8091834.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.29e1cca0.css",
+    "static/css/main.965e07b2.css",
     "static/js/main.dceef9c2.js"
   ]
 }
