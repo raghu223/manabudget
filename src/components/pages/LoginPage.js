@@ -55,39 +55,41 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="login-page">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        {error && <p className="error-message">{error}</p>}
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+    <div className="login-container">
+      <div className="login-page">
+        <h2>Login</h2>
+        <form onSubmit={handleLogin}>
+          {error && <p className="error-message">{error}</p>}
+          <div>
+            <label>Email:</label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label>Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div className="social-login">
+          <button className="btn google" onClick={handleGoogleLogin}><GoogleIcon />Sign in with Google</button>
         </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-      <div className="social-login">
-        <button className="btn google" onClick={handleGoogleLogin}><GoogleIcon />Sign in with Google</button>
+        <p>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
+        </p>
+        <p>
+          <Link to="/forgot-password">Forgot Password?</Link>
+        </p>
       </div>
-      <p>
-        Don't have an account? <Link to="/signup">Sign Up</Link>
-      </p>
-      <p>
-        <Link to="/forgot-password">Forgot Password?</Link>
-      </p>
     </div>
   );
 };
