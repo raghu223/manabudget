@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TermsOfService = () => (
-  <div className="container" style={{ maxWidth: 700, margin: '40px auto', background: '#fff', borderRadius: 8, padding: 24 }}>
+  <div className="container" style={{ background: '#fff', borderRadius: 8, padding: 24, paddingTop: 40 }}>
     <h2>Terms of Service</h2>
     <p>By using <strong>ManaBudget</strong>, you agree to the following terms:</p>
     <ul>

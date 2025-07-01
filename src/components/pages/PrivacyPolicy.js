@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PrivacyPolicy = () => (
-  <div className="container" style={{ maxWidth: 700, margin: '40px auto', background: '#fff', borderRadius: 8, padding: 24 }}>
+  <div className="container" style={{ background: '#fff', borderRadius: 8, padding: 24, paddingTop: 40 }}>
     <h2>Privacy Policy</h2>
     <p><strong>ManaBudget</strong> respects your privacy. We do not sell or share your personal information with third parties. Your data is stored securely and used only to provide you with the best budgeting and investment experience.</p>
     <ul>
